@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+class BotaoSimples extends StatelessWidget {
+  final String texto;
+  final Color? cor;
+  final Function() funcao;
+
+  const BotaoSimples(this.texto, this.cor, this.funcao, {Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: funcao,
+      child: Text(texto, style: TextStyle(fontSize: 16)),
+      style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color?>(cor),
+          shape: MaterialStateProperty.all<OutlinedBorder>(
+              RoundedRectangleBorder())),
+    );
+  }
+}
+
+botao2func(String contaMain, bool isReplaceable){
+   // if (isReplaceable) {
+   //   return "2";
+   // } else {
+   //   return contaMain+"2";
+   // }
+  return isReplaceable ? ["2",false] : [contaMain+"2",false];
+}
