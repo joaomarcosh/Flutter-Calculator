@@ -12,20 +12,11 @@ class BotaoSimples extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: funcao,
-      child: Text(texto, style: TextStyle(fontSize: 16)),
+      child: Text(texto, style: const TextStyle(fontSize: 16)),
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color?>(cor),
           shape: MaterialStateProperty.all<OutlinedBorder>(
-              RoundedRectangleBorder())),
+              const RoundedRectangleBorder())),
     );
   }
-}
-
-botao2func(String contaMain, bool isReplaceable){
-   // if (isReplaceable) {
-   //   return "2";
-   // } else {
-   //   return contaMain+"2";
-   // }
-  return isReplaceable ? ["2",false] : [contaMain+"2",false];
 }
